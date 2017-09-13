@@ -2,6 +2,7 @@ var express = require('express');
 var hbs = require('hbs');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine','hbs');
@@ -40,6 +41,6 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.listen(3000, 
- () => {console.log('Słucham na 3000')}
+app.listen(port, 
+ () => {console.log('Słucham na porcie ', port)}
 );
