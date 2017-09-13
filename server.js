@@ -1,7 +1,7 @@
 var express = require('express');
 var hbs = require('hbs');
 
-var pogoda = require('./tools/pogoda');
+var require = require('./tools/pogoda');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/bad', (req, res) => {
-    res.send(pogoda.pogoda);
+    res.send(require.pogoda.currently);
     });
 
 app.get('/about', (req, res) => {
