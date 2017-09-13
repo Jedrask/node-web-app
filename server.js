@@ -13,12 +13,6 @@ hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
 
-app.use( (req, res, next) => {
-    res.render('maintanance', {
-        title: 'Maintanance Page',
-        page: 'Strona serwisowa'
-    });
-});
 
 app.get('/', (req, res) => {
     res.render('home', {
@@ -38,6 +32,14 @@ app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
         page: 'To jest about',
+    });
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile', {
+        title: "Profil",
+        page: "Mój profil",
+        tekst: "Uczę się tworzyć strony za pomocą nodeJS"
     });
 });
 
