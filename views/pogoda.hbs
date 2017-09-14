@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="utf-8" />
-        <title>Obecna</title>
-        <h1>{{$(Date(time)()}}</h1>
+        <title>Pogoda</title>
+        <h1>{{pogoda}}</h1>
     </head>
     <body>
-        
-        <p>Ciśnienie atmosferyczne: {{pressure}} hPk</p>
+        <h2>Ogólnie: {{summary}}</h2>
+    <ul id="listaPogody"><h3>Szczegóły</h3>
+        <li>Temperatura: {{temperature}} C</li>
+        <li>Temperatura odczuwalna: {{apparentTemperature}} C</li>
+        <li>Ciśnienie atmosferyczne: {{pressure}} hPk</li>
+        <li>Temperatura punktu rosy: {{dewPoint}} C</li>
+        <li>Wilgotność: {{humidity}}</li>
+        <li>Zachmurzenie: {{cloudCover}}</li>
+        <li>Rodzaj opadu: {{precipType}}</li>
+        <li>Intensywność opadu: {{precipIntensity}}</li>
+        <li>Prawdopodobieństwo opadu: {{precipProbability}}</li>
+        <li>Siła wiatru: {{windSpeed}} m/s</li>
+        <li>Kierunek wiatru: {{windBearing}}</li>
+        <li>Widzialność: {{visibility}}</li>
+    </ul>
     </body>
     {{> footer}}
 </html>

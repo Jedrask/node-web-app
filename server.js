@@ -25,8 +25,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/bad', (req, res) => {
+    pogoda.pogoda.currently.time = Date(pogoda.pogoda.currently.time);
     res.render('pogoda', pogoda.pogoda.currently);
     // res.send(pogoda.pogoda.currently.pressure + ' ' + pogoda.lokalizacja.formatted_address);
+    pogoda.pogoda.hourly.data.forEach(function(element) {
+        console.log(element.time);    
+    });
+    console.log('dlu ', pogoda.pogoda.hourly.data.length);
+    
     });
 
 app.get('/about', (req, res) => {
